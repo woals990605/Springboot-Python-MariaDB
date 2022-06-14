@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>서울시 권역별 실시간 대기환경 현황</h2>
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>측정일시</th>
+            <th>권역명</th>
+            <th>측정소명</th>
+            <th>미세먼지</th>
+            <th>초미세먼지농도</th>
+            <th>오존</th>
+            <th>이산화질소농도</th>
+            <th>일산화탄소농도</th>
+            <th>아황산가스농도</th>
+            <th>통합대기환경등급</th>
+            <th>통합대기환경지수</th>
+            <th>지수결정물질</th>
+        </tr>
+        {{#weather}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{MSRDT}}</td>
+            <td>{{MSRRGN_NM}}</td>
+            <td>{{MSRSTE_NM}}</td>
+            <td>{{PM10}}</td>
+            <td>{{PM25}}</td>
+            <td>{{O3}}</td>
+            <td>{{NO2}}</td>
+            <td>{{CO}}</td>
+            <td>{{SO2}}</td>
+            <td>{{IDEX_NM}}</td>
+            <td>{{IDEX_MVL}}</td>
+            <td>{{ARPLT_MAIN}}</td>
+        </tr>
+        {{/weather}}
+
+    </table>
+
+</body>
+
+</html>
